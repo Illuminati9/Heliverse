@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const basicDataSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     id:{
         type: Number,
         required: true,
@@ -36,4 +36,4 @@ const basicDataSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('User',basicDataSchema)
+module.exports = mongoose.model('User',userSchema)
