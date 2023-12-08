@@ -1,4 +1,4 @@
-const BASE_URL ='http://localhost:5001/api'
+const BASE_URL = process.env.REACT_APP_URL
 console.log(BASE_URL);
 
 //USER ENDPOINTS
