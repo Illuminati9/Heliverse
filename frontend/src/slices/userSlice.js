@@ -4,6 +4,7 @@ const initialState = {
     domains: null,
     genders: null,
     displayData: null,
+    selectedData:[],
     userData: null,
     loading: false
 }
@@ -18,6 +19,9 @@ const userSlice = createSlice({
         setDomains(state,value){
             state.domains = value.payload;
         },
+        setSelectedData(state,value){
+            state.selectedData=value.payload;
+        },
         setDisplayData(state,value){
             state.displayData = value.payload;
         },
@@ -30,6 +34,6 @@ const userSlice = createSlice({
     }
 })
 
-export const { setUserData, setLoading,setDisplayData, setDomains,setGenders } = userSlice.actions;
+export const { setUserData, setLoading,setDisplayData, setDomains,setGenders,setSelectedData } = userSlice.actions;
 
 export default userSlice.reducer;

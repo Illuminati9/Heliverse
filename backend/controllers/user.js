@@ -176,9 +176,16 @@ exports.deleteUser = async (req, res) => {
 
 exports.filterData = async (req, res) => {
     try {
-        const { search, page, gender, domain } = req.query;
+        const { search, page, gender, domain,available } = req.query;
+        console.log(search,page,gender,domain,available);
         let newPage = parseInt(page) || 1;
+        let status=available;
         const pageSize = 20;
+        if(status=='true'){
+            status=true
+        }else{
+            status=false
+        }
 
         let filteredData = await User.find({});
         if (!filteredData) {
@@ -197,7 +204,7 @@ exports.filterData = async (req, res) => {
 
         if (gender) {
             filteredData = filteredData.filter(item => {
-                return item.gender.toLowerCase() === gender.toLowerCase()
+                return item.gender.toLowerCase().includes(gender.toLowerCase());
             })
         }
 
@@ -206,6 +213,10 @@ exports.filterData = async (req, res) => {
                 return item.domain.toLowerCase() === domain.toLowerCase();
             })
         }
+
+        filteredData = filteredData.filter(item=>{
+            return item.available===status;
+        })
 
         const startIndex = (newPage - 1) * pageSize;
         const endIndex = startIndex + pageSize;
