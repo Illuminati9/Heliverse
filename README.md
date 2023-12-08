@@ -83,11 +83,11 @@ This is a full-stack web application that allows users to view and interact with
 4. **Open in Browser:**
 
     - Frontend: http://localhost:3000
-    - Backend: http://localhost:5000
+    - Backend: http://localhost:5001
 
 # Contact Information
 For any concerns or questions, feel free to reach out via email at sutapalli.sns@gmail.com.
 
 # Deployment Links
-- Frontend: [Frontend Url](heliverse-beryl.vercel.app)
+- Frontend: [Frontend Url](https://heliverse-beryl.vercel.app)
 - Backend: [Backend Url](https://heliverse-backend-lo40.onrender.com)
