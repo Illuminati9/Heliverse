@@ -1,4 +1,4 @@
-const BASE_URL = 'https://heliverse-backend-lo40.onrender.com/api'
+const BASE_URL = process.env.REACT_APP_URL
 console.log(BASE_URL);
 
 //USER ENDPOINTS
